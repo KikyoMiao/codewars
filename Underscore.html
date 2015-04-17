@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*
+		Complete the function/method so that it takes CamelCase string and returns the string in snake_case notation. Lowercase characters can be numbers. If method gets number, it should return string.
+
+		Examples:
+
+		//  returns test_controller
+		toUnderscore('TestController');
+
+		// returns movies_and_books
+		toUnderscore('MoviesAndBooks');
+
+		// returns app7_test
+		toUnderscore('App7Test');
+
+		// returns "1"
+		toUnderscore(1);
+		*/
+
+		// Miao
+		function toUnderscore(str){
+		  var reg=/([A-Z])/g;
+		  if(!reg.test(str)) return str
+		  return str.replace(reg,function(match){
+		  	return '-'+match.toLowerCase();
+		  }).slice(1)
+		}
+
+		// Best
+		function toUnderscore(string) {
+			return string.toString().split(/(?=[A-Z])/).join('_').toLowerCase();
+		}
+
+		//这里利用了正则的(?=exp)匹配exp前面的位置
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
